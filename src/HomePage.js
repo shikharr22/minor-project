@@ -1,18 +1,23 @@
 import { React, useEffect, useState } from "react";
 import "./App.css";
-import firebase from './Firebase.js';
-
-let data=[];
+import { getDatabase, ref, child, get } from "firebase/database";
+import database from './Firebase.js';
 const HomePage = () => {
 
-    useEffect(() => {
-        const todoRef = firebase.database().ref('Data');
-        todoRef.on('value', (snapshot) => {
-          console.log(snapshot);
-        });
-      }, []);
     
- 
+   useEffect(()=>{
+    const dbRef = ref(database);
+    get(child(dbRef, `Data`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+   },[])
+    
 
   return (
     <>
