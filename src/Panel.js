@@ -8,7 +8,7 @@ const Panel = () => {
           <p style={{'color':'white','fontFamily':'Secular One','marginBottom':'8vh','fontSize':'4vh'}}>Welcome !! Bitch</p>
         <ul className="list">
           <li className="listItem">
-            <a className="link" href="#">
+            <a className="link" href="#main">
             <img className='panelIcons' src={require("./dashboard.png")} />
               Dashboard
             </a>

@@ -8,7 +8,7 @@
   top:10vh;
   width: 100vw;
   height: 100vh;
-  overflow:hidden;
+ 
 }
 .nav {
   position: fixed;
@@ -52,6 +52,7 @@
   justify-content: center;
   background-color: #020f01;
   align-items: center;
+  overflow:hidden;
 }
 
 .list {
@@ -84,14 +85,16 @@
   top:5vh;
   left:20vw;
   display: flex;
-  width: 60%;
+  width: 80%;
   flex-direction: column;
   height: 100%;
+  overflow: auto;
 }
 
 .section {
   width: 100%;
   height: 900px;
+  padding:200px;
 }
 
 #logo {
@@ -108,6 +111,7 @@
 {
   width: 100%;
   height: 600px;
+  padding-top: 0px;
 }
 
 #humidity
@@ -117,9 +121,9 @@
 
 #temperature
 {
-  background-color: #71e868;
+  background-color: whitesmoke;
 }
 #moisture
 {
-  background-color:#33e026;
+  background-color:#eee;
 }
