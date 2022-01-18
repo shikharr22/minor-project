@@ -32,18 +32,46 @@ const HomePage = () => {
   let humid = [],
     temp = [],
     moisture = [];
-
+  let tempAlert=0,humidAlert=0,moistAlert=0;
   //console.log(data.array);
   let labels = [];
   if (data.array != undefined) {
     for (let i = 0; i < data.array.length; i++) {
       humid.push(data.array[i].Humid);
+      if(humid[humid.length-1]>50)
+      {
+        humidAlert++;
+      }
+      else
+      {
+        humidAlert--;
+      }
+      
+     
       temp.push(data.array[i].Temp);
+      if(temp[temp.length-1]>25)
+      {
+        tempAlert++;
+      }
+      else
+      {
+        tempAlert--;
+      }
+      
       moisture.push(data.array[i].Moisture);
+      if(moisture[moisture.length-1]>20)
+      {
+        moistAlert++;
+      }
+      else
+      {
+        moistAlert--;
+      }
+
     }
 
     for (let i = 0; i < data.array.length; i++) {
-      labels.push(`${i + 1}`);
+      labels.push(`${(i + 1)*10}`);
     }
 
     //console.log(`Humidity:${humid}`);
@@ -130,6 +158,19 @@ const HomePage = () => {
               <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{humid[humid.length-1]}%</p>
             </div>
           </div>
+          { (humidAlert>3 || tempAlert>3 || moistAlert>3)?
+          <div id="alert" style={{'display':''}}>
+          <img style={{'width':'40px','height':'40px'}} src={require('./alert.png')}/>
+          {(humidAlert>3)?<p id="humidAlter" style={{'display':'','margin':'0 2vh 0 2vh'}}>Humidity too high!!</p>:<p id="humidAlter" style={{'display':'none'}}>Humidity too high!!</p>}
+          {(tempAlert>3)?<p id="humidAlter" style={{'display':'','margin':'0 2vh 0 2vh'}}>Temperature too high!!</p>:<p id="humidAlter" style={{'display':'none'}}>Temperature too high!!</p>}
+          {(moistAlert>3)?<p id="humidAlter" style={{'display':'','margin':'0 2vh 0 2vh'}}>Moisture too high!!</p>:<p id="humidAlter" style={{'display':'none'}}>Moisture too high!!</p>}
+          </div>: <div id="alert" style={{'display':'none'}}>
+          <img style={{'width':'40px','height':'40px'}} src={require('./alert.png')}/>
+          {(humidAlert>3)?<p id="humidAlter" style={{'display':'','margin':'0 2vh 0 2vh'}}>Humidity too high!!</p>:<p id="humidAlter" style={{'display':'none'}}>Humidity too high!!</p>}
+          {(tempAlert>3)?<p id="humidAlter" style={{'display':'','margin':'0 2vh 0 2vh'}}>Temperature too high!!</p>:<p id="humidAlter" style={{'display':'none'}}>Temperature too high!!</p>}
+          {(moistAlert>3)?<p id="humidAlter" style={{'display':'','margin':'0 2vh 0 2vh'}}>Moisture too high!!</p>:<p id="humidAlter" style={{'display':'none'}}>Moisture too high!!</p>}
+          </div>
+}
         </div>
         <div className="section" id="temperature">
           <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>Temperature</p>

@@ -21,15 +21,15 @@ const Panel = () => {
             </a>
           </li>
           <li className="listItem">
-            <a className="link" href="#humidity">
-              <img className='panelIcons'  src={require("./humidity.png")} />
-              Humidity
-            </a>
-          </li>
-          <li className="listItem">
             <a className="link" href="#moisture">
               <img className='panelIcons'  src={require("./moisture.png")} />
               Moisture
+            </a>
+          </li>
+          <li className="listItem">
+            <a className="link" href="#humidity">
+              <img className='panelIcons'  src={require("./humidity.png")} />
+              Humidity
             </a>
           </li>
         </ul>

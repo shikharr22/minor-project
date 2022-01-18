@@ -12,7 +12,7 @@ export default function NavigationBar() {
             <img src={require("./navLogo.png")} id="logo" />
           </li>
           <li className="navItem" style={{ "font-size": "3vh", 'color':'#5cf006' }}>
-            Garden Monitoring system
+            Plant Monitoring system
           </li>
           <li>
             <a href="#" className="navItem" style={{ "font-size": "2.2vh" }}>

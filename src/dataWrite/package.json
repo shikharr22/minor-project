@@ -1,0 +1,14 @@
+{
+  "name": "datawrite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "write.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.6.3"
+  }
+}
