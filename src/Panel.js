@@ -5,8 +5,8 @@ const Panel = () => {
   return (
     <>
       <div className="panel">
-          <img style={{'width':'200px','height':'200px'}} src={require("./jp.jpg")} />
-          <p style={{'color':'white','fontFamily':'Secular One','marginBottom':'4vh','fontSize':'4vh'}}>Welcome !! Bitch</p>
+          <img style={{'width':'200px','height':'200px','marginBottom':'6vh','borderRadius':'2px'}} src={require("./plant.png")} />
+          
         <ul className="list">
           <li className="listItem">
             <a className="link" href="#main">

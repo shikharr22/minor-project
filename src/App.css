@@ -48,7 +48,7 @@
   flex-direction: column;
   width: 20%;
   height: 100vh;
-  justify-content: center;
+  justify-content:stretch;
   background-color: #020f01;
   align-items: center;
   overflow: hidden;
@@ -63,7 +63,7 @@
 }
 .listItem {
   font-size: 2.75vh;
-  margin: 3vh 0vh 1vh 0vh;
+  margin: 3vh 0vh 0.5vh 0vh;
   text-transform: uppercase;
   padding: 2vh;
 }
@@ -113,16 +113,6 @@
   padding-top: 20px;
 }
 
-#humidity {
-  background-color: white;
-}
-
-#temperature {
-  background-color: whitesmoke;
-}
-#moisture {
-  background-color: #eee;
-}
 
 .card {
   display: flex;

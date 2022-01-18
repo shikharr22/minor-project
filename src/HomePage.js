@@ -64,6 +64,7 @@ const HomePage = () => {
         text: "Chart.js Line Chart",
       },
     },
+
   };
 
   const graph1 = {
@@ -72,8 +73,8 @@ const HomePage = () => {
       {
         label: "Temperature",
         data: temp,
-        borderColor: "#00212b",
-        backgroundColor: "#00212b",
+        borderColor: "#e8f22c",
+        backgroundColor: "#e8f22c",
       },
     ],
   };
@@ -99,8 +100,8 @@ const HomePage = () => {
       {
         label: "Humidity",
         data: humid,
-        borderColor: "#002b3b",
-        backgroundColor: "#002b3b",
+        borderColor: "#23c9eb",
+        backgroundColor: "#23c9eb",
       },
     ],
   };
@@ -111,35 +112,35 @@ const HomePage = () => {
     <>
       <div className="homepage">
         <div className="section" id="main" style={{'justifyContent':'center','alignItems':'center'}}>
-          <p style={{'textTransform':'uppercase'}}>Current Readings</p>
+          <p style={{'fontSize':'4vh','color':'#011c0f'}}>Current Readings</p>
           <div style={{'display':'flex'}}>
             <div className='card'>
-              <p style={{'fontSize':'2.75vh','color':'black','textTransform':'uppercase'}}>Temperature</p>
+              <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Temperature</p>
               <img style={{'width':'3vw','heigt':'5vh'}} src={require("./temp.png")} />
               <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{temp[temp.length-1]}° C</p>
             </div>
             <div className='card'>
-              <p style={{'fontSize':'2.75vh','color':'black','textTransform':'uppercase'}}>Moisture</p>
+              <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Moisture</p>
               <img style={{'width':'3vw','heigt':'5vh'}} src={require("./moisture.png")} />
               <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{moisture[moisture.length-1]}%</p>
             </div>
             <div className='card'>
-              <p style={{'fontSize':'2.75vh','color':'black','textTransform':'uppercase'}}>Humidity</p>
+              <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Humidity</p>
               <img style={{'width':'3vw','heigt':'5vh'}} src={require("./humidity.png")} />
               <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{humid[humid.length-1]}%</p>
             </div>
           </div>
         </div>
         <div className="section" id="temperature">
-          <p style={{'fontSize':'5vh','color':'#011c0f','textAlign':'center'}}>Temperature</p>
+          <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>Temperature</p>
           <Line options={options} data={graph1} />
         </div>
         <div className="section" id="humidity">
-          <p style={{'fontSize':'5vh','color':'#011c0f','textAlign':'center'}}>Humidity</p>
+          <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>Moisture</p>
           <Line options={options} data={graph2} />
         </div>
         <div className="section" id="moisture">
-          <p style={{'fontSize':'5vh','color':'#011c0f','textAlign':'center'}}>Moisture</p>
+          <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>Humidity</p>
           <Line options={options} data={graph3} />
         </div>
       </div>
