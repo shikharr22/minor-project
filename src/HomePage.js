@@ -32,7 +32,7 @@ const HomePage = () => {
 
   console.log(data.array);
   if (data.array != undefined) {
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < data.array.length; i++) {
       humid.push(data.array[i].Humid);
       temp.push(data.array[i].Temp);
       moisture.push(data.array[i].Moisture);
@@ -48,9 +48,8 @@ const HomePage = () => {
   return (
     <>
       <div className="homepage">
-        <div className="section" id="humidity"></div>
-        <div className="section" id="temperature"></div>
-        <div className="section" id="moisture"></div>
+        
+  
       </div>
     </>
   );

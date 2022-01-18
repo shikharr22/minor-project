@@ -6,10 +6,16 @@ import NavigationBar from "./NavigationBar.js";
 
 function App() {
   return (
-    <div className="container1">
+    <>
+    
+    <NavigationBar/>
+  
+    <div className="container2">
       <Panel />
       <HomePage />
     </div>
+    
+    </>
   );
 }
 
