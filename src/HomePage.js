@@ -31,8 +31,9 @@ const HomePage = () => {
 
   let humid = [],
     temp = [],
-    moisture = [];
-  let tempAlert=0,humidAlert=0,moistAlert=0;
+    moisture = [],
+    light=[];
+  let tempAlert=0,humidAlert=0,moistAlert=0,lightAlert=0;
   //console.log(data.array);
   let labels = [];
   if (data.array != undefined) {
@@ -66,6 +67,16 @@ const HomePage = () => {
       else
       {
         moistAlert--;
+      }
+
+      light.push(data.array[i].Light);
+      if(light[light.length-1]>20)
+      {
+        lightAlert++;
+      }
+      else
+      {
+        lightAlert--;
       }
 
     }
@@ -134,6 +145,19 @@ const HomePage = () => {
     ],
   };
 
+  const graph4 = {
+    labels,
+    datasets: [
+     
+      {
+        label: "Light Intensity",
+        data: light,
+        borderColor: "orange",
+        backgroundColor: "orange",
+      },
+    ],
+  };
+
 
 
   return (
@@ -143,7 +167,7 @@ const HomePage = () => {
           <p style={{'fontSize':'4vh','color':'#011c0f'}}>Current Readings</p>
           <div style={{'display':'flex'}}>
             <div className='card'>
-              <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Temperature</p>
+              <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Temp</p>
               <img style={{'width':'3vw','heigt':'5vh'}} src={require("./temp.png")} />
               <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{temp[temp.length-1]}° C</p>
             </div>
@@ -156,6 +180,11 @@ const HomePage = () => {
               <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Humidity</p>
               <img style={{'width':'3vw','heigt':'5vh'}} src={require("./humidity.png")} />
               <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{humid[humid.length-1]}%</p>
+            </div>
+            <div className='card'>
+              <p style={{'fontSize':'2.5vh','color':'black','textTransform':'uppercase'}}>Light</p>
+              <img style={{'width':'3vw','heigt':'5vh'}} src={require("./sunlight.png")} />
+              <p style={{'fontSize':'5vh','color':'white','textAlign':'center'}}>{light[light.length-1]}%</p>
             </div>
           </div>
           { (humidAlert>3 || tempAlert>3 || moistAlert>3)?
@@ -183,6 +212,13 @@ const HomePage = () => {
         <div className="section" id="moisture">
           <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>Humidity</p>
           <Line options={options} data={graph3} />
+        </div>
+        <div className="section" id="light">
+          <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>Light Intensity</p>
+          <Line options={options} data={graph4} />
+        </div>
+        <div className="section" id="aboutUs">
+          <p style={{'fontSize':'4vh','color':'#011c0f','textTransform':'uppercase'}}>About Us</p>
         </div>
       </div>
     </>

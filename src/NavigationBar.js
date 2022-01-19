@@ -1,9 +1,11 @@
-import React from "react";
+import {React,useState,useContext} from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { Container } from "react-bootstrap";
 import "./App.css";
 
+
 export default function NavigationBar() {
+ 
   return (
     <>
       <div className="nav">
@@ -15,12 +17,7 @@ export default function NavigationBar() {
             Plant Monitoring system
           </li>
           <li>
-            <a href="#" className="navItem" style={{ "font-size": "2.2vh" }}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" className="navItem" style={{ "font-size": "2.2vh" }}>
+            <a href="#aboutUs" className="navItem" style={{ "font-size": "2.2vh" }}>
               About Us
             </a>
           </li>

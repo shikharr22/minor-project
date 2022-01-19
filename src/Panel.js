@@ -32,6 +32,12 @@ const Panel = () => {
               Humidity
             </a>
           </li>
+          <li className="listItem">
+            <a className="link" href="#light">
+              <img className='panelIcons'  src={require("./sunlight.png")} />
+              Light Intensity
+            </a>
+          </li>
         </ul>
       </div>
     </>
