@@ -48,7 +48,7 @@
   flex-direction: column;
   width: 20%;
   height: 100vh;
-  justify-content:stretch;
+  justify-content: stretch;
   background-color: #020f01;
   align-items: center;
   overflow: hidden;
@@ -113,7 +113,6 @@
   padding-top: 20px;
 }
 
-
 .card {
   display: flex;
   flex-direction: column;
@@ -134,18 +133,66 @@
   );
 }
 
-#alert
-{
+#alert {
   display: flex;
   flex-direction: row;
   background-color: red;
   align-items: center;
-  opacity: 0.8; 
+  opacity: 0.8;
   width: 50vw;
   height: auto;
-  padding:20px;
+  padding: 20px;
   border-radius: 5px;
-  color:white;
+  color: white;
   font-size: 4vh;
 }
 
+#aboutUs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4vh;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#contributors {
+  display: flex;
+  flex-direction: row;
+  margin: 4vh;
+}
+
+.contri {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.loadingScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.plantGrow {
+  box-shadow: whitesmoke 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  animation: anim 7s ease-in;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0.2;
+  }
+  25%
+  {
+    opacity:0.5;
+  }
+  75%
+  {
+    opacity:0.7l
+  }
+  100% {
+    opacity: 1;
+  }
+}
