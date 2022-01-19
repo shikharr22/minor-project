@@ -33,40 +33,70 @@ const HomePage = () => {
     temp = [],
     moisture = [],
     light = [];
-  let tempAlert = 0,
-    humidAlert = 0,
-    moistAlert = 0,
-    lightAlert = 0;
+  let tempAlertH = 0,
+    humidAlertH = 0,
+    moistAlertH = 0,
+    lightAlertH = 0;
+
+  let tempAlertL = 0,
+    humidAlertL = 0,
+    moistAlertL = 0,
+    lightAlertL = 0;
   //console.log(data.array);
   let labels = [];
   if (data.array != undefined) {
     for (let i = 0; i < data.array.length; i++) {
       humid.push(data.array[i].Humid);
-      if (humid[humid.length - 1] > 50) {
-        humidAlert++;
+
+      if (humid[humid.length - 1] > 75) {
+        humidAlertH++;
       } else {
-        humidAlert--;
+        humidAlertH--;
+      }
+
+      if (humid[humid.length - 1] < 25) {
+        humidAlertL++;
+      } else {
+        humidAlertL--;
       }
 
       temp.push(data.array[i].Temp);
-      if (temp[temp.length - 1] > 25) {
-        tempAlert++;
+      if (temp[temp.length - 1] > 30) {
+        tempAlertH++;
       } else {
-        tempAlert--;
+        tempAlertH--;
+      }
+      if (temp[temp.length - 1] < 15) {
+        tempAlertL++;
+      } else {
+        tempAlertL--;
       }
 
       moisture.push(data.array[i].Moisture);
-      if (moisture[moisture.length - 1] > 20) {
-        moistAlert++;
+      if (moisture[moisture.length - 1] > 70) {
+        moistAlertH++;
       } else {
-        moistAlert--;
+        moistAlertH--;
+      }
+
+      if (moisture[moisture.length - 1] < 20) {
+        moistAlertL++;
+      } else {
+        moistAlertL--;
       }
 
       light.push(data.array[i].Light);
-      if (light[light.length - 1] > 20) {
-        lightAlert++;
+
+      if (light[light.length - 1] > 95) {
+        lightAlertH++;
       } else {
-        lightAlert--;
+        lightAlertH--;
+      }
+      if (light[light.length - 1] < 40) {
+        lightAlertL++;
+      } 
+      else {
+        lightAlertL--;
       }
     }
 
@@ -167,7 +197,7 @@ const HomePage = () => {
                 src={require("./temp.png")}
               />
               <p
-                style={{ fontSize: "5vh", color: "white", textAlign: "center" }}
+                 style={{ fontSize: "3vh", color: "white", textAlign: "center",marginTop:'10px' }}
               >
                 {temp[temp.length - 1]}° C
               </p>
@@ -183,11 +213,11 @@ const HomePage = () => {
                 Moisture
               </p>
               <img
-                style={{ width: "3vw", heigt: "5vh" }}
+                style={{ width: "3vw", heihgt: "5vh" }}
                 src={require("./moisture.png")}
               />
               <p
-                style={{ fontSize: "5vh", color: "white", textAlign: "center" }}
+                style={{ fontSize: "3vh", color: "white", textAlign: "center",marginTop:'10px' }}
               >
                 {moisture[moisture.length - 1]}%
               </p>
@@ -207,7 +237,7 @@ const HomePage = () => {
                 src={require("./humidity.png")}
               />
               <p
-                style={{ fontSize: "5vh", color: "white", textAlign: "center" }}
+                style={{ fontSize: "3vh", color: "white", textAlign: "center",marginTop:'10px' }}
               >
                 {humid[humid.length - 1]}%
               </p>
@@ -227,19 +257,26 @@ const HomePage = () => {
                 src={require("./sunlight.png")}
               />
               <p
-                style={{ fontSize: "5vh", color: "white", textAlign: "center" }}
+                 style={{ fontSize: "3vh", color: "white", textAlign: "center",marginTop:'10px' }}
               >
                 {light[light.length - 1]}%
               </p>
             </div>
           </div>
-          {humidAlert > 3 || tempAlert > 3 || moistAlert > 3 ? (
+          {humidAlertH > 3 ||
+          tempAlertH > 3 ||
+          moistAlertH > 3 ||
+          lightAlertH > 3 ||
+          humidAlertL > 3 ||
+          tempAlertL > 3 ||
+          moistAlertL > 3 ||
+          lightAlertL > 3 ? (
             <div id="alert" style={{ display: "" }}>
               <img
                 style={{ width: "40px", height: "40px" }}
                 src={require("./alert.png")}
               />
-              {humidAlert > 3 ? (
+              {humidAlertH > 3 ? (
                 <p
                   id="humidAlter"
                   style={{ display: "", margin: "0 2vh 0 2vh" }}
@@ -251,7 +288,19 @@ const HomePage = () => {
                   Humidity too high!!
                 </p>
               )}
-              {tempAlert > 3 ? (
+              {humidAlertL > 3 ? (
+                <p
+                  id="humidAlter"
+                  style={{ display: "", margin: "0 2vh 0 2vh" }}
+                >
+                  Humidity too low!!
+                </p>
+              ) : (
+                <p id="humidAlter" style={{ display: "none" }}>
+                  Humidity too low!!
+                </p>
+              )}
+              {tempAlertH > 3 ? (
                 <p
                   id="humidAlter"
                   style={{ display: "", margin: "0 2vh 0 2vh" }}
@@ -263,7 +312,19 @@ const HomePage = () => {
                   Temperature too high!!
                 </p>
               )}
-              {moistAlert > 3 ? (
+               {tempAlertL > 3 ? (
+                <p
+                  id="humidAlter"
+                  style={{ display: "", margin: "0 2vh 0 2vh" }}
+                >
+                  Temperature too low!!
+                </p>
+              ) : (
+                <p id="humidAlter" style={{ display: "none" }}>
+                  Temperature too low!!
+                </p>
+              )}
+              {moistAlertH > 3 ? (
                 <p
                   id="humidAlter"
                   style={{ display: "", margin: "0 2vh 0 2vh" }}
@@ -273,52 +334,148 @@ const HomePage = () => {
               ) : (
                 <p id="humidAlter" style={{ display: "none" }}>
                   Moisture too high!!
+                </p>
+              )}
+              {moistAlertL > 3 ? (
+                <p
+                  id="humidAlter"
+                  style={{ display: "", margin: "0 2vh 0 2vh" }}
+                >
+                  Moisture too low!!
+                </p>
+              ) : (
+                <p id="humidAlter" style={{ display: "none" }}>
+                  Moisture too low!!
+                </p>
+              )}
+              {lightAlertH > 3 ? (
+                <p
+                  id="humidAlter"
+                  style={{ display: "", margin: "0 2vh 0 2vh" }}
+                >
+                  Light exposure too high!!
+                </p>
+              ) : (
+                <p id="humidAlter" style={{ display: "none" }}>
+                  Light exposure too high!!
+                </p>
+              )}
+              {lightAlertL > 3 ? (
+                <p
+                  id="humidAlter"
+                  style={{ display: "", margin: "0 2vh 0 2vh" }}
+                >
+                  Light exposure too low!!
+                </p>
+              ) : (
+                <p id="humidAlter" style={{ display: "none" }}>
+                  Light exposure  too low!!
                 </p>
               )}
             </div>
           ) : (
             <div id="alert" style={{ display: "none" }}>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                src={require("./alert.png")}
-              />
-              {humidAlert > 3 ? (
-                <p
-                  id="humidAlter"
-                  style={{ display: "", margin: "0 2vh 0 2vh" }}
-                >
-                  Humidity too high!!
-                </p>
-              ) : (
-                <p id="humidAlter" style={{ display: "none" }}>
-                  Humidity too high!!
-                </p>
-              )}
-              {tempAlert > 3 ? (
-                <p
-                  id="humidAlter"
-                  style={{ display: "", margin: "0 2vh 0 2vh" }}
-                >
-                  Temperature too high!!
-                </p>
-              ) : (
-                <p id="humidAlter" style={{ display: "none" }}>
-                  Temperature too high!!
-                </p>
-              )}
-              {moistAlert > 3 ? (
-                <p
-                  id="humidAlter"
-                  style={{ display: "", margin: "0 2vh 0 2vh" }}
-                >
-                  Moisture too high!!
-                </p>
-              ) : (
-                <p id="humidAlter" style={{ display: "none" }}>
-                  Moisture too high!!
-                </p>
-              )}
-            </div>
+            <img
+              style={{ width: "40px", height: "40px" }}
+              src={require("./alert.png")}
+            />
+            {humidAlertH > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Humidity too high!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Humidity too high!!
+              </p>
+            )}
+            {humidAlertL > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Humidity too low!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Humidity too low!!
+              </p>
+            )}
+            {tempAlertH > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Temperature too high!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Temperature too high!!
+              </p>
+            )}
+             {tempAlertL > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Temperature too low!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Temperature too low!!
+              </p>
+            )}
+            {moistAlertH > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Moisture too high!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Moisture too high!!
+              </p>
+            )}
+            {moistAlertL > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Moisture too low!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Moisture too low!!
+              </p>
+            )}
+            {lightAlertH > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Light exposure too high!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Light exposure too high!!
+              </p>
+            )}
+            {lightAlertL > 3 ? (
+              <p
+                id="humidAlter"
+                style={{ display: "", margin: "0 2vh 0 2vh" }}
+              >
+                Light exposure too low!!
+              </p>
+            ) : (
+              <p id="humidAlter" style={{ display: "none" }}>
+                Light exposure  too low!!
+              </p>
+            )}
+          </div>
           )}
         </div>
         <div className="section" id="temperature">
@@ -470,7 +627,13 @@ const HomePage = () => {
             </div>
           </div>
           <div className="motive">
-            <p style={{ fontSize: "2.30vh",'textAlign':'center','color':'#21b7ed' }}>
+            <p
+              style={{
+                fontSize: "2.30vh",
+                textAlign: "center",
+                color: "#21b7ed",
+              }}
+            >
               "Plant monitoring system is a tool used for live monitoring of
               plants. We provide an arduino and IoT based monitoring system to
               take care of these plants remotely cutting off any human
