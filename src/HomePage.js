@@ -34,35 +34,25 @@ const HomePage = () => {
     temp = [],
     moisture = [],
     light = [];
-  
-    
-   
 
-  let  humidAlertL = 5,humidAlertH = 2;
- 
+  let humidAlertL = 5,
+    humidAlertH = 2;
+
   let labels = [];
   if (data.array != undefined) {
     for (let i = 0; i < data.array.length; i++) {
       humid.push(data.array[i].Humid);
 
-      
-
       temp.push(data.array[i].Temp);
-      
 
       moisture.push(data.array[i].Moisture);
-      
 
       light.push(data.array[i].Light);
-
-     
     }
 
     for (let i = 0; i < data.array.length; i++) {
       labels.push(`${(i + 1) * 10}`);
     }
-
-   
   }
   const options = {
     responsive: true,
@@ -70,14 +60,14 @@ const HomePage = () => {
       x: {
         title: {
           display: true,
-          text: 'Time'
-        }
-      }
-    }      ,  
+          text: "Time",
+        },
+      },
+    },
     plugins: {
       legend: {
-        labels:{
-          fontFamily:'Secular One'
+        labels: {
+          fontFamily: "Secular One",
         },
         position: "bottom",
       },
@@ -86,7 +76,6 @@ const HomePage = () => {
         text: "Chart.js Line Chart",
       },
     },
-  
   };
 
   const graph1 = {
@@ -110,7 +99,6 @@ const HomePage = () => {
         borderColor: "blue",
         backgroundColor: "blue",
       },
-     
     ],
   };
 
@@ -123,7 +111,6 @@ const HomePage = () => {
         borderColor: "#23c9eb",
         backgroundColor: "#23c9eb",
       },
-      
     ],
   };
 
@@ -136,25 +123,25 @@ const HomePage = () => {
         borderColor: "orange",
         backgroundColor: "orange",
       },
-     
     ],
   };
 
   return (
     <>
       <div className="homepage">
+        {/*   CURRENT  READINGS SECTION STARTS */}
         <div
           className="section"
           id="currentReadings"
           style={{ justifyContent: "center", alignItems: "center" }}
         >
           <p style={{ fontSize: "4vh", color: "#011c0f" }}>Realtime Readings</p>
-          <div style={{ display: "flex" ,justifyContent:'space-between'}}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="card">
               <p
                 style={{
-                  textAlign:'center',
-                  fontSize: "1.1rem ",
+                  textAlign: "center",
+                  fontSize: "0.9rem ",
                   color: "black",
                   textTransform: "uppercase",
                 }}
@@ -162,21 +149,33 @@ const HomePage = () => {
                 Temperature
               </p>
               <img
-              style={{ marginTop:'2vh',width:'3vw',height:'5vh'}}
+                style={{ marginTop: "2vh", width: "2.5vw", height: "5vh" }}
                 src={require("./temp.png")}
               />
               <p
-                 style={{ fontSize: "1.4rem", color: "white", textAlign: "center",marginTop:'10px' }}
+                style={{
+                  fontSize: "1.4rem",
+                  color: "black",
+                  textAlign: "center",
+                  marginTop: "10px",
+                }}
               >
                 {temp[temp.length - 1]}° C
               </p>
-              <Alert type='Temp' currVal={temp[temp.length-1]} highCount={0} lowCount={5} lowLimit={3} highLimit={50}/>
+              <Alert
+                type="Temp"
+                currVal={temp[temp.length - 1]}
+                highCount={0}
+                lowCount={5}
+                lowLimit={3}
+                highLimit={50}
+              />
             </div>
             <div className="card">
               <p
                 style={{
-                  textAlign:'center',
-                  fontSize: "1.1rem ",
+                  textAlign: "center",
+                  fontSize: "0.9rem ",
                   color: "black",
                   textTransform: "uppercase",
                 }}
@@ -184,62 +183,100 @@ const HomePage = () => {
                 Moisture
               </p>
               <img
-              style={{ marginTop:'2vh',width:'3vw',height:'5vh'}}
+                style={{ marginTop: "2vh", width: "2.5vw", height: "5vh" }}
                 src={require("./moisture.png")}
               />
               <p
-                style={{ fontSize: "1.4rem", color: "white", textAlign: "center",marginTop:'10px' }}
+                style={{
+                  fontSize: "1.4rem",
+                  color: "black",
+                  textAlign: "center",
+                  marginTop: "10px",
+                }}
               >
                 {moisture[moisture.length - 1]}%
               </p>
-              <Alert type='Moisture' currVal={moisture[moisture.length-1]} highCount={0} lowCount={5} lowLimit={3} highLimit={50}/>
+              <Alert
+                type="Moisture"
+                currVal={moisture[moisture.length - 1]}
+                highCount={0}
+                lowCount={5}
+                lowLimit={3}
+                highLimit={50}
+              />
             </div>
             <div className="card">
               <p
                 style={{
-                  textAlign:'center',
-                  fontSize: "1.1rem ",
+                  textAlign: "center",
+                  fontSize: "0.9rem ",
                   color: "black",
                   textTransform: "uppercase",
                 }}
               >
-                Humidity 
+                Humidity
               </p>
               <img
-               style={{ marginTop:'2vh',width:'3vw',height:'5vh'}}
+                style={{ marginTop: "2vh", width: "2.5vw", height: "5vh" }}
                 src={require("./humidity.png")}
               />
               <p
-                style={{ fontSize: "1.4rem", color: "white", textAlign: "center",marginTop:'10px' }}
+                style={{
+                  fontSize: "1.4rem",
+                  color: "black",
+                  textAlign: "center",
+                  marginTop: "10px",
+                }}
               >
                 {humid[humid.length - 1]}%
               </p>
-              <Alert type='Humidity' currVal={humid[humid.length-1]} highCount={0} lowCount={5} lowLimit={3} highLimit={50}/>
+              <Alert
+                type="Humidity"
+                currVal={humid[humid.length - 1]}
+                highCount={0}
+                lowCount={5}
+                lowLimit={3}
+                highLimit={50}
+              />
             </div>
             <div className="card">
               <p
                 style={{
-                  textAlign:'center',
-                  fontSize: "1.1rem ",
+                  textAlign: "center",
+                  fontSize: "0.9rem ",
                   color: "black",
                   textTransform: "uppercase",
                 }}
               >
-                 Light
+                Light
               </p>
               <img
-               style={{ marginTop:'2vh',width:'3vw',height:'5vh'}}
+                style={{ marginTop: "2vh", width: "2.5  vw", height: "5vh" }}
                 src={require("./sunlight.png")}
               />
               <p
-                 style={{ fontSize: "1.4rem", color: "white", textAlign: "center",marginTop:'10px' }}
+                style={{
+                  fontSize: "1.4rem",
+                  color: "black",
+                  textAlign: "center",
+                  marginTop: "10px",
+                }}
               >
                 {light[light.length - 1]}%
               </p>
-              <Alert type='Light Exposure' currVal={light[light.length-1]} highCount={0} lowCount={5} lowLimit={3} highLimit={50}/>
+              <Alert
+                type="Light Exposure"
+                currVal={light[light.length - 1]}
+                highCount={0}
+                lowCount={5}
+                lowLimit={3}
+                highLimit={50}
+              />
             </div>
           </div>
         </div>
+        {/*   CURRENT  READINGS SECTION ENDS */}
+        {/*   TEMPERATURE SECTION STARTS */}
         <div className="section" id="temperature">
           <p
             style={{
@@ -252,6 +289,8 @@ const HomePage = () => {
           </p>
           <Line options={options} data={graph1} />
         </div>
+        {/*   TEMPERATURE SECTION ENDS */}
+        {/*   MOISTURE SECTION STARTS */}
         <div className="section" id="moisture">
           <p
             style={{
@@ -264,6 +303,8 @@ const HomePage = () => {
           </p>
           <Line options={options} data={graph2} />
         </div>
+        {/*   MOISTURE SECTION ENDS */}
+        {/*   HUMIDITY SECTION STARTS */}
         <div className="section" id="humidity">
           <p
             style={{
@@ -276,6 +317,8 @@ const HomePage = () => {
           </p>
           <Line options={options} data={graph3} />
         </div>
+        {/*   HUMIDITY SECTION ENDS */}
+        {/*   LIGHT INTENSITY SECTION STARTS */}
         <div className="section" id="light">
           <p
             style={{
@@ -288,6 +331,8 @@ const HomePage = () => {
           </p>
           <Line options={options} data={graph4} />
         </div>
+        {/*   LIGHT INTENSITY SECTION ENDS */}
+        {/*   ABOUT US SECTION STARTS */}
         <div className="section" id="aboutUs">
           <p
             style={{
@@ -410,6 +455,7 @@ const HomePage = () => {
             <p>Copyright 2022</p>
           </span>
         </div>
+        {/*   ABOUT US SECTION ENDS */}
       </div>
     </>
   );

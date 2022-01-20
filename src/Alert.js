@@ -16,7 +16,7 @@ const Alert = (props) => {
     {(highCount>countLimit || lowCount>countLimit)?
       <div className="alert">
         <img
-          style={{ width: "2rem", height: "2rem" }}
+          style={{ width: "2vw", height: "4vh" }}
           src={require("./alert.png")}
         />
         {currVal > highLimit && highCount>countLimit ? (

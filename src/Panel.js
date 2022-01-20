@@ -5,7 +5,7 @@ const Panel = () => {
   return (
     <>
       <div className="panel">
-          <img style={{'width':'200px','height':'200px','marginBottom':'6vh','borderRadius':'2px'}} src={require("./plant.png")} />
+          <img style={{width:'200px',height:'200px',marginBottom:'6vh',borderRadius:'2px',marginTop:'4vh'}} src={require("./jp.jpg")} />
           
         <ul className="list">
           <li className="listItem">

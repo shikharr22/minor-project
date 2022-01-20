@@ -5,11 +5,11 @@
 }
 html {
   font-size: 20px;
-    
+
   @media screen and (min-width: 900px) {
     font-size: 22px;
   }
-    
+
   @media screen and (min-width: 1200px) {
     font-size: 24px;
   }
@@ -45,14 +45,10 @@ html {
   list-style-type: none;
   margin: 20px;
   text-transform: uppercase;
-  font-size: 2.75vh;
-  color: whitesmoke;
-  font-family: "Secular One", cursive;
-}
-
-.navItem:hover {
+  font-size: 1.2rem;
   color: #5cf006;
 }
+
 
 .panel {
   display: flex;
@@ -73,19 +69,18 @@ html {
   list-style-type: none;
 }
 .listItem {
-  font-size: 2.75vh;
+  font-size: 1.11rem;
   margin: 3vh 0vh 0.5vh 0vh;
   text-transform: uppercase;
-  padding: 2vh;
+  padding: 1.5vh;
 }
 .listItem:hover {
-  transform: scale(1.12);
+  transform: scale(1.01);
 }
 
 .link {
   text-decoration: none;
   color: #ffffff;
-  font-family: "Secular One", cursive;
 }
 .link:hover {
   color: #5cf006;
@@ -123,29 +118,22 @@ html {
   padding-top: 20px;
 }
 
-
-
 .card {
   display: flex;
   flex-direction: column;
-  width: 25vh;
-  height: 24vh;
-  border-radius: 10px;
+  width: 24vh;
+  height: 23vh;
   padding: 3vh;
   align-items: center;
   margin: 4vh 5vh 0 0;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-    rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  background: rgb(34, 193, 195);
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  background-color: #17f9f2;
+  background-image: linear-gradient(315deg, #17f9f2 0%, #b0f9a9 74%);
+  
 }
-
-
+.card:hover{
+  transform: scale(1.01);
+}
 
 #aboutUs {
   display: flex;
@@ -184,31 +172,28 @@ html {
   0% {
     opacity: 0.2;
   }
-  25%
-  {
-    opacity:0.5;
+  25% {
+    opacity: 0.5;
   }
-  75%
-  {
-    opacity:0.7l
+  75% {
+    opacity: 0.7l;
   }
   100% {
     opacity: 1;
   }
 }
-#humidAlter
-{
+#humidAlter {
   font-size: 2vh;
 }
 
-.alert
-{
-  width:10vw;
+.alert {
+  width: auto;
+  padding:2vh;
   height: auto;
   display: flex;
-  margin-top:2.5rem;
+  margin-top: 2.5rem;
   flex-direction: column;
   align-items: center;
-  background-color: #c92006;
-  border-radius:0.5rem;
+  background-color: #eb0000;
+  border-radius: 0.1rem;
 }
