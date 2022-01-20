@@ -6,6 +6,8 @@ import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import Alert from "./Alert.js";
 import AboutUs from "./AboutUs";
+
+
 const HomePage = () => {
   const [data, setData] = useState([]);
 
