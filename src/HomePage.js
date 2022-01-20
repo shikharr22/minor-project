@@ -163,7 +163,7 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {temp[temp.length - 1].toPrecision(4)}° C
+                {temp[temp.length - 1]}° C
               </p>
               <Alert
                 type="Temp"
@@ -197,7 +197,7 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {moisture[moisture.length - 1].toPrecision(4)}%
+                {moisture[moisture.length - 1]}%
               </p>
               <Alert
                 type="Moisture"
@@ -231,7 +231,7 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {humid[humid.length - 1].toPrecision(4)}%
+                {humid[humid.length - 1]}%
               </p>
               <Alert
                 type="Humidity"
@@ -265,7 +265,7 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {light[light.length - 1].toPrecision(4)}%
+                {light[light.length - 1]}%
               </p>
               <Alert
                 type="Light Exposure"

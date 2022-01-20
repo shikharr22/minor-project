@@ -20,12 +20,7 @@ export default function AboutUs() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
-<<<<<<< HEAD
-              margin:"0 4vw 0 3.8vw",
-=======
-              marginLeft:'3.9vw',
-              marginRight: "4vw",
->>>>>>> 91bbd6601728570eaf5f4e768bd00596617c5b45
+              margin: "0 4vw 0 3.8vw",
             }}
           >
             <img
@@ -41,7 +36,14 @@ export default function AboutUs() {
                 textTransform: "uppercase",
               }}
             >
-              <a target="_blank" style={{textDecoration:'none',color:'#d1b500'}} href="https://www.linkedin.com/in/yash-gund-5994281a0/"> Yash</a>
+              <a
+                target="_blank"
+                style={{ textDecoration: "none", color: "#d1b500" }}
+                href="https://www.linkedin.com/in/yash-gund-5994281a0/"
+              >
+                {" "}
+                Yash
+              </a>
             </p>
           </div>
           <div
@@ -64,7 +66,14 @@ export default function AboutUs() {
                 textTransform: "uppercase",
               }}
             >
-              <a target="_blank" style={{textDecoration:'none',color:'#d1b500'}} href="https://www.linkedin.com/in/shikhar-raizaday-b9a8941ab/"> Shikhar{" "}</a>
+              <a
+                target="_blank"
+                style={{ textDecoration: "none", color: "#d1b500" }}
+                href="https://www.linkedin.com/in/shikhar-raizaday-b9a8941ab/"
+              >
+                {" "}
+                Shikhar{" "}
+              </a>
             </p>
           </div>
           <div
@@ -87,7 +96,14 @@ export default function AboutUs() {
                 textTransform: "uppercase",
               }}
             >
-             <a target="_blank" style={{textDecoration:'none',color:'#d1b500'}} href="https://www.linkedin.com/in/utkarsh-thakkar-417aba1b5/">  Utkarsh{" "}</a>
+              <a
+                target="_blank"
+                style={{ textDecoration: "none", color: "#d1b500" }}
+                href="https://www.linkedin.com/in/utkarsh-thakkar-417aba1b5/"
+              >
+                {" "}
+                Utkarsh{" "}
+              </a>
             </p>
           </div>
           <div
@@ -110,7 +126,14 @@ export default function AboutUs() {
                 textTransform: "uppercase",
               }}
             >
-              <a target="_blank" style={{textDecoration:'none',color:'#d1b500'}} href="https://www.linkedin.com/in/pranav-c-b44799111/"> Pranav C</a>{" "}
+              <a
+                target="_blank"
+                style={{ textDecoration: "none", color: "#d1b500" }}
+                href="https://www.linkedin.com/in/pranav-c-b44799111/"
+              >
+                {" "}
+                Pranav C
+              </a>{" "}
             </p>
           </div>
         </div>
