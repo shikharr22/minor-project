@@ -24,7 +24,7 @@ export default function AboutUs() {
             }}
           >
             <img
-              style={{ width: "8vw", height: "15vh" }}
+              style={{ width: "7vw", height: "15vh" }}
               className="contriPics"
               src={require("./yash.jpeg")}
             />
@@ -47,7 +47,7 @@ export default function AboutUs() {
             }}
           >
             <img
-              style={{ width: "8vw", height: "15vh" }}
+              style={{ width: "7vw", height: "15vh" }}
               className="contriPics"
               src={require("./shikhar.jpeg")}
             />
@@ -70,7 +70,7 @@ export default function AboutUs() {
             }}
           >
             <img
-              style={{ width: "8vw", height: "15vh" }}
+              style={{ width: "7vw", height: "15vh" }}
               className="contriPics"
               src={require("./utkarsh.jpeg")}
             />
@@ -93,7 +93,7 @@ export default function AboutUs() {
             }}
           >
             <img
-              style={{ width: "8vw", height: "15vh" }}
+              style={{ width: "7vw", height: "15vh" }}
               className="contriPics"
               src={require("./pranav.jpg")}
             />
