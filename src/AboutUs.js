@@ -20,6 +20,7 @@ export default function AboutUs() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
+              marginLeft:'3.9vw',
               marginRight: "4vw",
             }}
           >
