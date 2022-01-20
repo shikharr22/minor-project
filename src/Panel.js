@@ -11,7 +11,7 @@ const Panel = () => {
           <li className="listItem">
             <a className="link" href="#main">
             <img className='panelIcons' src={require("./dashboard.png")} />
-              Dashboard
+              Realtime Readings
             </a>
           </li>
           <li className="listItem">

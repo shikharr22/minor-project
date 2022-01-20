@@ -17,10 +17,10 @@ function App() {
   }, [])
   return (
     <>
-    {
+    {/* {
       (isloading)?<div className="loadingScreen">
         <img className='plantGrow' style={{'width':'400px','height':'400px','borderRadius':'10px'}}src={require('./plantgrow.gif')}/>
-      </div>:
+      </div>: */}
      <div>
      <NavigationBar/>
     <div className="container2">
@@ -28,7 +28,7 @@ function App() {
       <HomePage />
     </div>
     </div>
-    }
+    {/* } */}
     </>
   );
 }
