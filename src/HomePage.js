@@ -163,13 +163,13 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {temp[temp.length - 1]}° C
+                {temp[temp.length - 1].toPrecision(4)}° C
               </p>
               <Alert
                 type="Temp"
                 currVal={temp[temp.length - 1]}
                 highCount={0}
-                lowCount={5}
+                lowCount={0}
                 lowLimit={3}
                 highLimit={50}
               />
@@ -197,13 +197,13 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {moisture[moisture.length - 1]}%
+                {moisture[moisture.length - 1].toPrecision(4)}%
               </p>
               <Alert
                 type="Moisture"
                 currVal={moisture[moisture.length - 1]}
                 highCount={0}
-                lowCount={5}
+                lowCount={0}
                 lowLimit={3}
                 highLimit={50}
               />
@@ -231,13 +231,13 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {humid[humid.length - 1]}%
+                {humid[humid.length - 1].toPrecision(4)}%
               </p>
               <Alert
                 type="Humidity"
                 currVal={humid[humid.length - 1]}
                 highCount={0}
-                lowCount={5}
+                lowCount={0}
                 lowLimit={3}
                 highLimit={50}
               />
@@ -265,13 +265,13 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {light[light.length - 1]}%
+                {light[light.length - 1].toPrecision(4)}%
               </p>
               <Alert
                 type="Light Exposure"
                 currVal={light[light.length - 1]}
                 highCount={0}
-                lowCount={5}
+                lowCount={0}
                 lowLimit={3}
                 highLimit={50}
               />
