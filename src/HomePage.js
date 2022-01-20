@@ -5,6 +5,7 @@ import database from "./Firebase.js";
 import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import Alert from "./Alert.js";
+import AboutUs from "./AboutUs";
 const HomePage = () => {
   const [data, setData] = useState([]);
 
@@ -332,130 +333,7 @@ const HomePage = () => {
           <Line options={options} data={graph4} />
         </div>
         {/*   LIGHT INTENSITY SECTION ENDS */}
-        {/*   ABOUT US SECTION STARTS */}
-        <div className="section" id="aboutUs">
-          <p
-            style={{
-              fontSize: "4vh",
-              color: "#011c0f",
-              textTransform: "uppercase",
-            }}
-          >
-            About Us
-          </p>
-          <div id="contributors">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginRight: "4vw",
-              }}
-            >
-              <img
-                style={{ width: "9vw", height: "18vh" }}
-                className="contri"
-                src={require("./yash.jpeg")}
-              />
-              <p
-                style={{
-                  textAlign: "center",
-                  marginTop: "2vh",
-                  textTransform: "uppercase",
-                }}
-              >
-                Yash
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginRight: "4vw",
-              }}
-            >
-              <img
-                style={{ width: "9vw", height: "18vh" }}
-                className="contri"
-                src={require("./shikhar.jpeg")}
-              />
-              <p
-                style={{
-                  textAlign: "center",
-                  marginTop: "2vh",
-                  textTransform: "uppercase",
-                }}
-              >
-                Shikhar{" "}
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginRight: "4vw",
-              }}
-            >
-              <img
-                style={{ width: "9vw", height: "18vh" }}
-                className="contri"
-                src={require("./utkarsh.jpeg")}
-              />
-              <p
-                style={{
-                  textAlign: "center",
-                  marginTop: "2vh",
-                  textTransform: "uppercase",
-                }}
-              >
-                Utkarsh{" "}
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginRight: "4vw",
-              }}
-            >
-              <img
-                style={{ width: "9vw", height: "18vh" }}
-                className="contri"
-                src={require("./pranav.jpg")}
-              />
-              <p
-                style={{
-                  textAlign: "center",
-                  marginTop: "2vh",
-                  textTransform: "uppercase",
-                }}
-              >
-                Pranav C
-              </p>
-            </div>
-          </div>
-          <div className="motive">
-            <p
-              style={{
-                fontSize: "2.30vh",
-                textAlign: "center",
-                color: "#21b7ed",
-              }}
-            >
-              "Plant monitoring system is a tool used for live monitoring of
-              plants. We provide an arduino and IoT based monitoring system to
-              take care of these plants remotely cutting off any human
-              intervention."
-            </p>
-          </div>
-          <span style={{ marginTop: "15vh", textAlign: "center" }}>
-            <img
-              style={{ width: "20px", height: "20px" }}
-              src={require("./copyright.png")}
-            />
-            <p>Copyright 2022</p>
-          </span>
-        </div>
-        {/*   ABOUT US SECTION ENDS */}
+        <AboutUs/>
       </div>
     </>
   );
