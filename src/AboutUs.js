@@ -20,7 +20,12 @@ export default function AboutUs() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
+<<<<<<< HEAD
               margin:"0 4vw 0 3.8vw",
+=======
+              marginLeft:'3.9vw',
+              marginRight: "4vw",
+>>>>>>> 91bbd6601728570eaf5f4e768bd00596617c5b45
             }}
           >
             <img
