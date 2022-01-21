@@ -13,7 +13,7 @@ const Alert = (props) => {
   return (
     <>
     {(highCount>countLimit || lowCount>countLimit)?
-      <div className="alert">
+      <div className="alert blink">
         <img
           style={{ width: "2vw", height: "4vh" }}
           src={require("./alert.png")}
