@@ -144,7 +144,7 @@ const HomePage = () => {
       x: {
         title: {
           display: true,
-          text: "Time",
+          text: "Time(minutes)",
         },
       },
     },
