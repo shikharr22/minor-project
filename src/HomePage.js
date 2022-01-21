@@ -61,6 +61,11 @@ const HomePage = () => {
   if (data.array != undefined) {
     for (let i = 0; i < data.array.length; i++) {
       //humidity
+      if(data.array[i].Humid>100)
+      {
+        humid.push(100);
+      }
+      else
       humid.push(data.array[i].Humid);
       if (humid[humid.length - 1] > humidHigh) {
         humidAlertH++;
@@ -74,6 +79,11 @@ const HomePage = () => {
         humidAlertL=2;
       }
       // temperature
+      if(data.array[i].Temp>100)
+      {
+        temp.push(100);
+      }
+      else
       temp.push(data.array[i].Temp);
       if (temp[temp.length - 1] > tempHigh) {
         tempAlertH++;
@@ -87,6 +97,11 @@ const HomePage = () => {
         tempAlertL=2;;
       }
       //moisture
+      if(data.array[i].Moisture>100)
+      {
+        moisture.push(100);
+      }
+      else
       moisture.push(data.array[i].Moisture);
       if (moisture[temp.length - 1] > moistureHigh) {
         moistureAlertH++;
@@ -100,6 +115,11 @@ const HomePage = () => {
         moistureAlertL=2;
       }
       //light
+      if(data.array[i].Light>100)
+      {
+        light.push(100);
+      }
+      else
       light.push(data.array[i].Light);
       if (light[light.length - 1] > lightHigh) {
         lightAlertH++;
