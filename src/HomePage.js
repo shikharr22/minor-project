@@ -65,52 +65,52 @@ const HomePage = () => {
       if (humid[humid.length - 1] > humidHigh) {
         humidAlertH++;
       } else {
-        humidAlertH=3;
+        humidAlertH=2;
       }
 
       if (humid[humid.length - 1] < humidLow) {
         humidAlertL++;
       } else {
-        humidAlertL=3;
+        humidAlertL=2;
       }
       // temperature
       temp.push(data.array[i].Temp);
       if (temp[temp.length - 1] > tempHigh) {
         tempAlertH++;
       } else {
-        tempAlertH=3;
+        tempAlertH=2;
       }
 
       if (temp[temp.length - 1] < tempLow) {
         tempAlertL++;
       } else {
-        tempAlertL=3;;
+        tempAlertL=2;;
       }
       //moisture
       moisture.push(data.array[i].Moisture);
       if (moisture[temp.length - 1] > moistureHigh) {
         moistureAlertH++;
       } else {
-        moistureAlertH=3;;
+        moistureAlertH=2;
       }
 
       if (moisture[moisture.length - 1] < moistureLow) {
         moistureAlertL++;
       } else {
-        moistureAlertL=3;
+        moistureAlertL=2;
       }
       //light
       light.push(data.array[i].Light);
       if (light[light.length - 1] > lightHigh) {
         lightAlertH++;
       } else {
-        lightAlertH=3;
+        lightAlertH=2;
       }
 
       if (light[light.length - 1] < lightLow) {
         lightAlertL++;
       } else {
-        lightAlertL=3 ;
+        lightAlertL=2;
       }
     }
 
@@ -323,7 +323,7 @@ const HomePage = () => {
                   marginTop: "10px",
                 }}
               >
-                {light[light.length - 1]}%
+                {parseInt(light[light.length - 1])}%
               </p>
               <Alert
                 type="Light Exposure"
