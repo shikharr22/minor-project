@@ -6,7 +6,6 @@ let countLimit=3;
 
 const Alert = (props) => {
   let type = props.type
-  let currVal = props.currVal
   let highCount=props.highCount
   let lowCount=props.lowCount
   let lowLimit = props.lowLimit;
@@ -19,10 +18,10 @@ const Alert = (props) => {
           style={{ width: "2vw", height: "4vh" }}
           src={require("./alert.png")}
         />
-        {currVal > highLimit && highCount>countLimit ? (
+        {highCount>countLimit ? (
           <p style={{ color: "white",fontSize:'0.7rem',margin:'0.5rem'}}>{type} too high!!</p>
         ) : null}
-         {currVal <lowLimit && lowCount>countLimit ? (
+         {lowCount>countLimit ? (
           <p style={{color: "white",fontSize:'0.7rem',margin:'0.5rem'}}>{type} too low!!</p>
         ) : null}
       </div>:null}

@@ -2,10 +2,15 @@ import {React,useState,useContext} from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { Container } from "react-bootstrap";
 import "./App.css";
-
+import { getDatabase, ref, child, get, set } from "firebase/database";
+import database from "./Firebase.js";
 
 export default function NavigationBar() {
- 
+  
+  const dbRef = ref(database);
+  const handleForceClear=()=>{
+   console.log("Clicked!!");
+  }
   return (
     <>
       <div className="nav">
@@ -20,6 +25,11 @@ export default function NavigationBar() {
             <a href="#aboutUs" className="navItem">
               About Us
             </a>
+          </li>
+          <li>
+          <li  style={{cursor:'pointer'}}className="navItem" onClick={handleForceClear}>
+            Force Clear
+          </li>
           </li>
         </ul>
       </div>

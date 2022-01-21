@@ -7,7 +7,6 @@ import Chart from "chart.js/auto";
 import Alert from "./Alert.js";
 import AboutUs from "./AboutUs";
 
-
 const HomePage = () => {
   const [data, setData] = useState([]);
 
@@ -38,19 +37,81 @@ const HomePage = () => {
     moisture = [],
     light = [];
 
-  let humidAlertL = 5,
-    humidAlertH = 2;
+  let humidAlertL = 0,
+    humidAlertH = 0,
+    humidLow = 30,
+    humidHigh = 80;
+
+    let tempAlertL = 0,
+    tempAlertH = 0,
+    tempLow = 15,
+    tempHigh = 35;
+
+    let moistureAlertL = 0,
+    moistureAlertH = 0,
+    moistureLow = 30,
+    moistureHigh = 101;
+
+    let lightAlertL = 0,
+    lightAlertH = 0,
+    lightLow = 20,
+    lightHigh = 95;
 
   let labels = [];
   if (data.array != undefined) {
     for (let i = 0; i < data.array.length; i++) {
+      //humidity
       humid.push(data.array[i].Humid);
+      if (humid[humid.length - 1] > humidHigh) {
+        humidAlertH++;
+      } else {
+        humidAlertH--;
+      }
 
+      if (humid[humid.length - 1] < humidLow) {
+        humidAlertL++;
+      } else {
+        humidAlertL--;
+      }
+      // temperature
       temp.push(data.array[i].Temp);
+      if (temp[temp.length - 1] > tempHigh) {
+        tempAlertH++;
+      } else {
+        tempAlertH--;
+      }
 
+      if (temp[temp.length - 1] < tempLow) {
+        tempAlertL++;
+      } else {
+        tempAlertL--;
+      }
+      //moisture
       moisture.push(data.array[i].Moisture);
+      if (moisture[temp.length - 1] > moistureHigh) {
+        moistureAlertH++;
+      } else {
+        moistureAlertH--;
+      }
 
+      if (moisture[moisture.length - 1] < moistureLow) {
+        moistureAlertL++;
+      } else {
+        moistureAlertL--;
+      }
+      //light
       light.push(data.array[i].Light);
+      if (light[light.length - 1] > lightHigh) {
+        lightAlertH++;
+      } else {
+        lightAlertH--;
+      }
+
+      if (light[light.length - 1] < lightLow) {
+        lightAlertL++;
+      } else {
+        lightAlertL--;
+      }
     }
 
     for (let i = 0; i < data.array.length; i++) {
@@ -167,11 +228,10 @@ const HomePage = () => {
               </p>
               <Alert
                 type="Temp"
-                currVal={temp[temp.length - 1]}
-                highCount={0}
-                lowCount={0}
-                lowLimit={3}
-                highLimit={50}
+                highCount={tempAlertH}
+                lowCount={tempAlertL}
+                lowLimit={tempLow}
+                highLimit={tempHigh}
               />
             </div>
             <div className="card">
@@ -201,11 +261,10 @@ const HomePage = () => {
               </p>
               <Alert
                 type="Moisture"
-                currVal={moisture[moisture.length - 1]}
-                highCount={0}
-                lowCount={0}
-                lowLimit={3}
-                highLimit={50}
+                highCount={moistureAlertH}
+                lowCount={moistureAlertL}
+                lowLimit={moistureLow}
+                highLimit={moistureHigh}
               />
             </div>
             <div className="card">
@@ -235,11 +294,10 @@ const HomePage = () => {
               </p>
               <Alert
                 type="Humidity"
-                currVal={humid[humid.length - 1]}
-                highCount={0}
-                lowCount={0}
-                lowLimit={0}
-                highLimit={50}
+                highCount={humidAlertH}
+                lowCount={humidAlertL}
+                lowLimit={humidLow}
+                highLimit={humidHigh}
               />
             </div>
             <div className="card">
@@ -269,11 +327,10 @@ const HomePage = () => {
               </p>
               <Alert
                 type="Light Exposure"
-                currVal={light[light.length - 1]}
-                highCount={0}
-                lowCount={0}
-                lowLimit={3}
-                highLimit={50}
+                highCount={lightAlertH}
+                lowCount={lightAlertL}
+                lowLimit={lightLow}
+                highLimit={lightHigh}
               />
             </div>
           </div>
@@ -335,7 +392,7 @@ const HomePage = () => {
           <Line options={options} data={graph4} />
         </div>
         {/*   LIGHT INTENSITY SECTION ENDS */}
-        <AboutUs/>
+        <AboutUs />
       </div>
     </>
   );
