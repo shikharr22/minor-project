@@ -238,7 +238,7 @@ const HomePage = () => {
                 currVal={humid[humid.length - 1]}
                 highCount={0}
                 lowCount={0}
-                lowLimit={3}
+                lowLimit={0}
                 highLimit={50}
               />
             </div>
