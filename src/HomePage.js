@@ -65,52 +65,52 @@ const HomePage = () => {
       if (humid[humid.length - 1] > humidHigh) {
         humidAlertH++;
       } else {
-        humidAlertH--;
+        humidAlertH=3;
       }
 
       if (humid[humid.length - 1] < humidLow) {
         humidAlertL++;
       } else {
-        humidAlertL--;
+        humidAlertL=3;
       }
       // temperature
       temp.push(data.array[i].Temp);
       if (temp[temp.length - 1] > tempHigh) {
         tempAlertH++;
       } else {
-        tempAlertH--;
+        tempAlertH=3;
       }
 
       if (temp[temp.length - 1] < tempLow) {
         tempAlertL++;
       } else {
-        tempAlertL--;
+        tempAlertL=3;;
       }
       //moisture
       moisture.push(data.array[i].Moisture);
       if (moisture[temp.length - 1] > moistureHigh) {
         moistureAlertH++;
       } else {
-        moistureAlertH--;
+        moistureAlertH=3;;
       }
 
       if (moisture[moisture.length - 1] < moistureLow) {
         moistureAlertL++;
       } else {
-        moistureAlertL--;
+        moistureAlertL=3;
       }
       //light
       light.push(data.array[i].Light);
       if (light[light.length - 1] > lightHigh) {
         lightAlertH++;
       } else {
-        lightAlertH--;
+        lightAlertH=3;
       }
 
       if (light[light.length - 1] < lightLow) {
         lightAlertL++;
       } else {
-        lightAlertL--;
+        lightAlertL=3 ;
       }
     }
 
