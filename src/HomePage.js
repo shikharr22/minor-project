@@ -2,10 +2,11 @@ import { React, useEffect, useState } from "react";
 import "./App.css";
 import { getDatabase, ref, child, get, set } from "firebase/database";
 import database from "./Firebase.js";
-import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
+import { Line } from "react-chartjs-2";
 import Alert from "./Alert.js";
 import AboutUs from "./AboutUs";
+
 
 const HomePage = () => {
   const [data, setData] = useState([]);
@@ -42,17 +43,17 @@ const HomePage = () => {
     humidLow = 30,
     humidHigh = 80;
 
-    let tempAlertL = 0,
+  let tempAlertL = 0,
     tempAlertH = 0,
     tempLow = 15,
     tempHigh = 35;
 
-    let moistureAlertL = 0,
+  let moistureAlertL = 0,
     moistureAlertH = 0,
     moistureLow = 30,
     moistureHigh = 101;
 
-    let lightAlertL = 0,
+  let lightAlertL = 0,
     lightAlertH = 0,
     lightLow = 20,
     lightHigh = 95;
@@ -61,76 +62,64 @@ const HomePage = () => {
   if (data.array != undefined) {
     for (let i = 0; i < data.array.length; i++) {
       //humidity
-      if(data.array[i].Humid>100)
-      {
+      if (data.array[i].Humid > 100) {
         humid.push(100);
-      }
-      else
-      humid.push(data.array[i].Humid);
+      } else humid.push(data.array[i].Humid);
       if (humid[humid.length - 1] > humidHigh) {
         humidAlertH++;
       } else {
-        humidAlertH=2;
+        humidAlertH = 2;
       }
 
       if (humid[humid.length - 1] < humidLow) {
         humidAlertL++;
       } else {
-        humidAlertL=2;
+        humidAlertL = 2;
       }
       // temperature
-      if(data.array[i].Temp>100)
-      {
+      if (data.array[i].Temp > 100) {
         temp.push(100);
-      }
-      else
-      temp.push(data.array[i].Temp);
+      } else temp.push(data.array[i].Temp);
       if (temp[temp.length - 1] > tempHigh) {
         tempAlertH++;
       } else {
-        tempAlertH=2;
+        tempAlertH = 2;
       }
 
       if (temp[temp.length - 1] < tempLow) {
         tempAlertL++;
       } else {
-        tempAlertL=2;;
+        tempAlertL = 2;
       }
       //moisture
-      if(data.array[i].Moisture>100)
-      {
+      if (data.array[i].Moisture > 100) {
         moisture.push(100);
-      }
-      else
-      moisture.push(data.array[i].Moisture);
+      } else moisture.push(data.array[i].Moisture);
       if (moisture[temp.length - 1] > moistureHigh) {
         moistureAlertH++;
       } else {
-        moistureAlertH=2;
+        moistureAlertH = 2;
       }
 
       if (moisture[moisture.length - 1] < moistureLow) {
         moistureAlertL++;
       } else {
-        moistureAlertL=2;
+        moistureAlertL = 2;
       }
       //light
-      if(data.array[i].Light>100)
-      {
+      if (data.array[i].Light > 100) {
         light.push(100);
-      }
-      else
-      light.push(data.array[i].Light);
+      } else light.push(data.array[i].Light);
       if (light[light.length - 1] > lightHigh) {
         lightAlertH++;
       } else {
-        lightAlertH=2;
+        lightAlertH = 2;
       }
 
       if (light[light.length - 1] < lightLow) {
         lightAlertL++;
       } else {
-        lightAlertL=2;
+        lightAlertL = 2;
       }
     }
 
@@ -142,22 +131,34 @@ const HomePage = () => {
     responsive: true,
     scales: {
       x: {
+        grid:{
+         display:false,
+        },
         title: {
           display: true,
           text: "Time(minutes)",
         },
       },
     },
+    y: {
+      grid: {
+        display: false
+      }
+    },
+
     plugins: {
       legend: {
         labels: {
-          fontFamily: "Secular One",
+          font:{
+            Family: "Secular One",
+            size:20,
+          }
         },
         position: "bottom",
       },
       title: {
         display: false,
-        text: "Chart.js Line Chart",
+        
       },
     },
   };
@@ -356,6 +357,7 @@ const HomePage = () => {
           </div>
         </div>
         {/*   CURRENT  READINGS SECTION ENDS */}
+
         {/*   TEMPERATURE SECTION STARTS */}
         <div className="section" id="temperature">
           <p
@@ -367,7 +369,9 @@ const HomePage = () => {
           >
             Temperature
           </p>
+          <div className="graph">
           <Line options={options} data={graph1} />
+          </div>
         </div>
         {/*   TEMPERATURE SECTION ENDS */}
         {/*   MOISTURE SECTION STARTS */}
@@ -409,6 +413,7 @@ const HomePage = () => {
           >
             Light Intensity
           </p>
+
           <Line options={options} data={graph4} />
         </div>
         {/*   LIGHT INTENSITY SECTION ENDS */}

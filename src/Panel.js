@@ -5,8 +5,8 @@ const Panel = () => {
   return (
     <>
       <div className="panel">
-          <img style={{width:'15vw',height:'21vh',marginBottom:'4vh',borderRadius:'2px',marginTop:'4vh'}} src={require("./plantgrow.gif")} />
-          <p style={{color:'white',fontWeight:'bold'}}>NOICE!!</p>
+          <img style={{width:'15vw',height:'21vh',marginBottom:'4vh',borderRadius:'2px',marginTop:'6vh'}} src={require("./plantgrow.gif")} />
+         
         <ul className="list">
           <li className="listItem">
             <a className="link" href="#currentReadings">

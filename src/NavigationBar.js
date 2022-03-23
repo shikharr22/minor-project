@@ -27,9 +27,6 @@ export default function NavigationBar() {
             </a>
           </li>
           <li>
-          <li  style={{position:'absolute',right:'2vh',cursor:'pointer',color:'white'}}className="navItem" onClick={handleForceClear}>
-            Force Clear
-          </li>
           </li>
         </ul>
       </div>
